@@ -28,7 +28,7 @@ langs.addEventListener("click", () =>{
 })
 
 const langData = {
-    HU:{
+    HU: {
         mlHome: "Kezdőlap",
         mlAbout: "Csapatunkról",
         mlAboutDesc: "Hosszú ideje rövid formátumú videók szerkesztésével foglalkozunk. Ez idő alatt számos technikát elsajátítottunk melyek segítségével garantáljuk a szocális médián való terjeszkedést. Több klienssel is dolgoztunk illetve dolgozunk pályafutásunk alatt, melyek referenciája megtekinthető a Referencia szekcióban.",
@@ -39,8 +39,8 @@ const langData = {
         mlName: "Mergo Solutions",
         mlShortIntro: "A programozáshoz való szenvedélyem miatt sok programnyelvet ismertem meg és sajátítottam el, valamint fogok is. Többek között a HTML, CSS, SQL és Javascript nyelvek, valamint az AMXX Pawn scriptnyelv áll hozzám a legközelebb.",
         mlDesc1: "És Én Egy",
-        mlProf1: "Videóvágók",
-        mlProf2: "Videóvágók",
+        mlProf1: "Rövid videók",
+        mlProf2: "Hosszú videók",
         mlProf3: "Videóvágók",
         mlTitleProf1: "Web Fejlesztés",
         mlTitleProf2: "CS 1.6 Fejlesztés",
@@ -55,10 +55,21 @@ const langData = {
         mlFullName: "Teljes név",
         mlMobileNumber: "Telefonszám",
         mlSubject: "Tárgy",
-        mlMessage: "Üzenet"
+        mlMessage: "Üzenet",
+        mlDevinJatho: "Devin Jatho",
+        mlMotivational: "Motiváció",
+        mlPodcast: "Podcast",
+        mlVoiceover: "Arcleírás",
+        mlGameplay: "Játék",
+        mlFunny: "Vicces",
+        mlStoryTelling: "Történetmesélés",
+        mlCarRamp: "Car ramp",
+        mlColorGrading: "Színkorrekció",
+        mlAI: "MI",
+        mlSport: "Sport"
     },
 
-    EN:{
+    EN: {
         mlHome: "Home",
         mlAbout: "About Our Team",
         mlAboutDesc: "For a long time, we have been engaged in the editing of short-format videos. During this period, we have mastered numerous techniques that ensure guaranteed expansion on social media. We have worked and are currently working with several clients throughout our career, and their references can be viewed in the References section.",
@@ -67,16 +78,16 @@ const langData = {
         mlContact: "Contact",
         mlWelcome: "Welcome, we are the",
         mlName: "Mergo Solutions",
-        mlShortIntro: "Due to my obsession with programming, I have mastered many languages and will continue to do so. Among others, mostly the HTML, CSS, SQL and Javascript langauges, and the AMXX Pawn script language stands the closest to myself.",
+        mlShortIntro: "Due to my obsession with programming, I have mastered many languages and will continue to do so. Among others, mostly the HTML, CSS, SQL and Javascript languages, and the AMXX Pawn script language stands the closest to myself.",
         mlDesc1: "And I'm a",
-        mlProf1: "Web Developer",
-        mlProf2: "AMXX Pawn Developer",
+        mlProf1: "Short Videos",
+        mlProf2: "Long Videos",
         mlProf3: "Video Editors",
         mlTitleProf1: "Web Development",
         mlTitleProf2: "CS 1.6 Development",
         mlTitleProf3: "Video Editing",
-        mlDescProf1: "The first reference here is the portfolio itself. I created it with the languages HTML, CSS and Javascript. If you wish to, I can create your own.",
-        mlDescProf2: "My main references are OnlyD2, Sniper és Zombi servers. Hard, complex, optimalised plugins. A* pathfinding, NPC system.",
+        mlDescProf1: "The first reference here is the portfolio itself. I created it with the languages HTML, CSS, and Javascript. If you wish to, I can create your own.",
+        mlDescProf2: "My main references are OnlyD2, Sniper, and Zombi servers. Hard, complex, optimized plugins. A* pathfinding, NPC system.",
         mlDescProf3: "We complete our work within a 24-hour deadline. In addition to swift delivery, we also prioritize precise video production.",
         mlReference: "Reference",
         mlServices2: "Services",
@@ -85,17 +96,45 @@ const langData = {
         mlFullName: "Full Name",
         mlMobileNumber: "Mobile Number",
         mlSubject: "Subject",
-        mlMessage: "Message"
+        mlMessage: "Message",
+        mlDevinJatho: "Devin Jatho",
+        mlMotivational: "Motivational",
+        mlPodcast: "Podcast",
+        mlVoiceover: "Facial voiceover",
+        mlGameplay: "Gameplay",
+        mlFunny: "Funny",
+        mlStoryTelling: "Storytelling",
+        mlCarRamp: "Car Ramp",
+        mlColorGrading: "Color Grading",
+        mlAI: "AI",
+        mlSport: "Sport"
     }
+    
+    
 }
 
 setLanguage(defaultLanguage);
+
+function initializeTyped(stringsArray) {
+    if (typed) {
+        typed.destroy(); // Destroy the existing instance before creating a new one
+    }
+
+    typed = new Typed(".multiple-text", {
+        strings: stringsArray,
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    });
+}
 
 function setLanguage(language){
     console.log(language);
     const languageData = langData[language];
 
-    typed.strings =[languageData["mlProf3"], languageData["mlProf3"], languageData["mlProf3"]];
+    // Initialize the Typed.js instance with the new strings
+    initializeTyped([languageData["mlProf3"], languageData["mlProf1"], languageData["mlProf2"]]);
 
     for (const key in languageData) {
         if (languageData.hasOwnProperty(key)) {
@@ -154,21 +193,81 @@ ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact 
 ScrollReveal().reveal(".home-content h1, .about-img", {origin: "left"});
 ScrollReveal().reveal(".home-content p, .about-content", {origin: "right"});
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    const formData = new FormData(event.target);
-    const userData = {};
-
-    for (const [key, value] of formData) {
-        userData[key] = value;
-    }
-
-    localStorage.setItem('userData', JSON.stringify(userData));
-    console.log('User data saved:', userData);
-    
-    event.target.reset();
-});
-
 const savedData = localStorage.getItem('userData');
 console.log(savedData);
+//
+const videoData = {
+    devinjatho: {
+        src: 'djatho.mp4',
+        desc: 'After Effects',
+        width: 250,
+    },
+    motivational: {
+        src: 'dtrump motivation.mp4',
+        desc: 'After Effects',
+        width: 250,
+    },
+    podcast: {
+        src: '12.03.2023 Ghosts are dangerous.mp4',
+        desc: 'Premiere Pro',
+        width: 250,
+    },
+    voiceover: {
+        src: 'jayoma voiceover.mp4',
+        desc: 'Premiere Pro',
+        width: 250,
+    },
+    gameplay: {
+        src: '10.04.2023.afk.fix.mp4',
+        desc: 'Premiere Pro',
+        width: 250,
+    },
+    funny: {
+        src: 'Radek trial.mp4',
+        desc: 'Premiere Pro',
+        width: 600,
+    },
+    storytelling: {
+        src: '09.10.2023.scam.music.mp4',
+        desc: 'Premiere Pro',
+        width: 250,
+    },
+    carramp: {
+        src: 'carramp.mp4',
+        desc: 'After Effects',
+        width: 250,
+    },
+    colorgrading: {
+        src: 'patrick b cc.mp4',
+        desc: 'After Effects',
+        width: 250,
+    },
+    ai: {
+        src: 'How To Free Your Mind.mp4',
+        desc: 'Premiere Pro',
+        width: 250,
+    },
+    sport: {
+        src: 'ufc sport.mp4',
+        desc: 'Premiere Pro',
+        width: 600,
+    },
+};
+
+
+
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+        const video = videoData[category];
+
+        const videoElement = document.getElementById('portfolioVideo');
+        const descriptionElement = document.getElementById('videoDescription');
+
+        videoElement.setAttribute('src', video.src);
+        videoElement.setAttribute('width', video.width); // Set the width
+        descriptionElement.textContent = video.desc;
+
+        videoElement.play();
+    });
+});
