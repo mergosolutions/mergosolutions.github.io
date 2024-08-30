@@ -15,9 +15,9 @@
 
         <nav class="navbar">
             <a href="#home" class="active" id="mlHome">Home</a>
-            <a href="#portfolio" id="mlPortfolio">Portfolio</a>
             <a href="#about" id="mlAbout">About</a>
-            <a href="#Rating" id="mlRating">Rating</a>
+            <a href="#services" id="mlServices">Services</a>
+            <a href="#portfolio" id="mlPortfolio">Portfolio</a>
             <a href="#contact" id="mlContact">Contact</a>
             <a href="#lang" class="language">HU</a>
         </nav>
@@ -43,48 +43,6 @@
         </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading"><span id="mlReference">References</span></h2>
-    
-        <div class="portfolio-filters">
-            <button class="filter-btn" data-category="devinjatho" id="mlDevinJatho">Devin Jatho</button>
-            <button class="filter-btn" data-category="motivational" id="mlMotivational">Motivational</button>
-            <button class="filter-btn" data-category="podcast" id="mlPodcast">Podcast</button>
-            <button class="filter-btn" data-category="voiceover" id="mlVoiceover">Voiceover</button>
-            <button class="filter-btn" data-category="colorgrading" id="mlColorGrading">Color Grading</button>
-            <button class="filter-btn" data-category="gameplay" id="mlGameplay">Gameplay</button>
-            <button class="filter-btn" data-category="funny" id="mlFunny">Funny</button>
-            <button class="filter-btn" data-category="storytelling" id="mlStoryTelling">Story Telling</button>
-            <button class="filter-btn" data-category="carramp" id="mlCarRamp">Car ramp</button>
-            <button class="filter-btn" data-category="ai" id="mlAI">AI</button>
-            <button class="filter-btn" data-category="sport" id="mlSport">Sport</button>
-        </div>
-    
-        <div class="video-container">
-            <!-- Bal oldali, homályosított videó -->
-            <div class="video-wrapper prev-video">
-                <video muted loop></video>
-            </div>
-
-            <button id="prevBtn" class="nav-btn">&#9664;</button>
-    
-            <!-- Fő videó -->
-            <div class="video-wrapper main-video">
-                <video id="portfolioVideo" controls autoplay muted loop width="250">
-                    <source src="djatho.mp4" type="video/mp4" class="video-settings">
-                </video>
-                <div class="portfolio-description" id="videoDescription">After Effects</div>
-            </div>
-
-            <button id="nextBtn" class="nav-btn">&#9654;</button>
-    
-            <!-- Jobb oldali, homályosított videó -->
-            <div class="video-wrapper next-video">
-                <video muted loop></video>
-            </div>
-        </div>
-    </section>
-
     <section class="about" id="about">
         <div class="about-img">
             <img src="lion1.png" alt="">
@@ -98,8 +56,8 @@
         </div>
     </section>
 
-    <section class="Rating" id="Rating">
-        <h2 class="heading"><span id="mlRating2"></span></h2>
+    <section class="services" id="services">
+        <h2 class="heading"><span id="mlServices2"></span></h2>
     
         <div class="cards-container">
             <div class="card">
@@ -110,7 +68,6 @@
                         <!-- A JavaScript tölti be ide a listaelemeket -->
                     </ul>
                     <p class="card-price" id="mlCardprice1">Ár: 10 000 Ft</p>
-                    <p class="card-price-caution" id="mlPricecaution1">The price can vary depending on the quality you require.</p>
                 </div>
             </div>
     
@@ -122,7 +79,6 @@
                         <!-- A JavaScript tölti be ide a listaelemeket -->
                     </ul>
                     <p class="card-price" id="mlCardprice2">Ár: 20 000 Ft</p>
-                    <p class="card-price-caution" id="mlPricecaution2">The price can vary depending on the quality you require.</p>
                 </div>
             </div>
     
@@ -134,11 +90,37 @@
                         <!-- A JavaScript tölti be ide a listaelemeket -->
                     </ul>
                     <p class="card-price" id="mlCardprice3">Ár: 30 000 Ft</p>
-                    <p class="card-price-caution" id="mlPricecaution3">The price can vary depending on the quality you require.</p>
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
+    
+    
+
+<section class="portfolio" id="portfolio">
+    <h2 class="heading"><span id="mlReference">References</span></h2>
+
+    <div class="portfolio-filters">
+        <button class="filter-btn" data-category="devinjatho" id="mlDevinJatho">Devin Jatho</button>
+        <button class="filter-btn" data-category="motivational" id="mlMotivational">Motivational</button>
+        <button class="filter-btn" data-category="podcast" id="mlPodcast">Podcast</button>
+        <button class="filter-btn" data-category="voiceover" id="mlVoiceover">Voiceover</button>
+        <button class="filter-btn" data-category="colorgrading" id="mlColorGrading">Color Grading</button>
+        <button class="filter-btn" data-category="gameplay" id="mlGameplay">Gameplay</button>
+        <button class="filter-btn" data-category="funny" id="mlFunny">Funny</button>
+        <button class="filter-btn" data-category="storytelling" id="mlStoryTelling">Story Telling</button>
+        <button class="filter-btn" data-category="carramp" id="mlCarRamp">Car ramp</button>
+        <button class="filter-btn" data-category="ai" id="mlAI">AI</button>
+        <button class="filter-btn" data-category="sport" id="mlSport">Sport</button>
+    </div>
+    <div class="portfolio-display">
+        <video id="portfolioVideo" controls autoplay muted loop width="250">
+            <source src="djatho.mp4" type="video/mp4">
+        </video>
+        <div class="portfolio-description" id="videoDescription">After Effects</div>
+    </div>
+</section>
+
 
     <section class="contact" id="contact">
         <h2 class="heading"><span id="mlContact2">Contact</span></h2>
@@ -166,6 +148,32 @@
     <script src="reference.js"></script>
 
     <script src="data.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Leírások és azonosítók tömbje
+            const descriptions = [
+                { desc: langData.HU.mlCarddesc1, listId: 'mlCarddesc1' },
+                { desc: langData.HU.mlCarddesc2, listId: 'mlCarddesc2' },
+                { desc: langData.HU.mlCarddesc3, listId: 'mlCarddesc3' }
+            ];
+
+            // Iterálás a leírások tömbjén
+            descriptions.forEach(({ desc, listId }) => {
+                const descriptionList = document.getElementById(listId);
+
+            // A meglévő elemek törlése a listából, ha szükséges
+                descriptionList.innerHTML = '';
+
+                // A listaelemek hozzáadása a megfelelő HTML elemhez
+                desc.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    descriptionList.appendChild(li);
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

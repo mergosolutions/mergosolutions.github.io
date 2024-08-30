@@ -72,11 +72,10 @@ const langData = {
         mlCarddesc1: [
             "Havonta 20 videó",
             "24 órán belüli munka",
-            "25-45 másodperc",
-            "Közepes minőség",
-            "Premiere Pro"
+            "25-50 másodperc",
+            "Közepes minőség"
         ],
-        mlCardprice1: "4000 Ft / Perc",
+        mlCardprice1: "3500 Ft / Perc",
 
         mlCardservice2: "Haladó csomag",
         mlCarddesc2: [
@@ -84,23 +83,17 @@ const langData = {
             "24 órán belüli munka",
             "25-60 másodperc",
             "Közepes minőség",
-            "Premiere Pro"
         ],
-        mlCardprice2: "3500 Ft / Perc",
+        mlCardprice2: "4000 Ft / Perc",
 
         mlCardservice3: "Profi csomag",
         mlCarddesc3: [
             "Havonta 30+ videó",
             "24 órán belüli munka",
-            "25-180 másodperc",
-            "Magas minőség",,
-            "Premiere Pro + After Effects"
+            "25-60 másodperc",
+            "Magas minőség",
         ],
         mlCardprice3: "6000 Ft / Perc",
-
-        mlPricecaution1: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution2: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution3: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
     },
 
     EN: {
@@ -141,40 +134,7 @@ const langData = {
         mlCarRamp: "Car Ramp",
         mlColorGrading: "Color Grading",
         mlAI: "AI",
-        mlSport: "Sport",
-
-        mlCardservice1: "Basic Package",
-        mlCarddesc1: [
-            "20 videos per month",
-            "Work within 24 hours",
-            "25-45 seconds",
-            "Medium quality",
-            "Premiere Pro"
-        ],
-        mlCardprice1: "$12 / Minute",
-
-        mlCardservice2: "Advanced Package",
-        mlCarddesc2: [
-            "30+ videos per month",
-            "Work within 24 hours",
-            "25-60 seconds",
-            "Medium quality",
-            "Premiere Pro"
-        ],
-        mlCardprice2: "$10 / Minute",
-
-        mlCardservice3: "Professional Package",
-        mlCarddesc3: [
-            "30+ videos per month",
-            "Work within 24 hours",
-            "25-180 seconds",
-            "High quality",
-            "Premiere Pro + After Effects"
-        ],
-        mlCardprice3: "$15 / Minute",
-        mlPricecaution1: "The price may vary depending on the quality you demand.",
-        mlPricecaution2: "The price may vary depending on the quality you demand.",
-        mlPricecaution3: "The price may vary depending on the quality you demand.",
+        mlSport: "Sport"
     }
     
     
@@ -196,47 +156,25 @@ function initializeTyped(stringsArray) {
     });
 }
 
-function setLanguage(language) {
+function setLanguage(language){
     console.log(language);
     const languageData = langData[language];
 
     // Initialize the Typed.js instance with the new strings
     initializeTyped([languageData["mlProf3"], languageData["mlProf1"], languageData["mlProf2"]]);
 
-    // Update text content for elements based on IDs
     for (const key in languageData) {
         if (languageData.hasOwnProperty(key)) {
             const value = languageData[key];
-            // Update the content of the element if it exists
-            if (document.getElementById(key)) {
+            //console.log(`Language: ${language}, Key: ${key}, Value: ${value}`);
+
+            if(document.getElementById(key)){
                 document.getElementById(key).textContent = value;
             }
+            // You can perform further operations with the language, key, and value here
         }
     }
-
-    // Leírások és azonosítók tömbje
-    const descriptions = [
-        { desc: languageData.mlCarddesc1, listId: 'mlCarddesc1' },
-        { desc: languageData.mlCarddesc2, listId: 'mlCarddesc2' },
-        { desc: languageData.mlCarddesc3, listId: 'mlCarddesc3' }
-    ];
-
-    // Iterálás a leírások tömbjén
-    descriptions.forEach(({ desc, listId }) => {
-        const descriptionList = document.getElementById(listId);
-
-        // A meglévő elemek törlése a listából, ha szükséges
-        descriptionList.innerHTML = '';
-
-        // A listaelemek hozzáadása a megfelelő HTML elemhez
-        desc.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            descriptionList.appendChild(li);
-        });
-    });
 }
-
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle("bx-x");
@@ -420,27 +358,22 @@ document.querySelectorAll('.filter-btn').forEach((button) => {
 
 updateVideos(); // Inicializálás
 
-document.querySelectorAll('.card').forEach(card => {
-    const cardInner = card.querySelector('.card-content');
+const card = document.querySelector('.card');
+const cardInner = document.querySelector('.card-content');
 
-    card.addEventListener('mousemove', (event) => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenterX = cardRect.left + cardRect.width / 2;
-        const cardCenterY = cardRect.top + cardRect.height / 2;
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
+card.addEventListener('mousemove', (event) => {
+    const cardRect = card.getBoundingClientRect();
+    const cardCenterX = cardRect.left + cardRect.width / 2;
+    const cardCenterY = cardRect.top + cardRect.height / 2;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
 
-        const rotateX = ((mouseY - cardCenterY) / cardRect.height) * -10;
-        const rotateY = ((mouseX - cardCenterX) / cardRect.width) * 10;
+    const rotateX = ((mouseY - cardCenterY) / cardRect.height) * 15;
+    const rotateY = ((mouseX - cardCenterX) / cardRect.width) * -15;
 
-        cardInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        cardInner.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
+    cardInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM teljesen betöltve");
+card.addEventListener('mouseleave', () => {
+    cardInner.style.transform = 'rotateX(0deg) rotateY(0deg)';
 });

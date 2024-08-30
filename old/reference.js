@@ -32,7 +32,7 @@ const langData = {
         mlHome: "Kezdőlap",
         mlAbout: "Csapatunkról",
         mlAboutDesc: "Hosszú ideje rövid formátumú videók szerkesztésével foglalkozunk. Ez idő alatt számos technikát elsajátítottunk melyek segítségével garantáljuk a szocális médián való terjeszkedést. Több klienssel is dolgoztunk illetve dolgozunk pályafutásunk alatt, melyek referenciája megtekinthető a Referencia szekcióban.",
-        mlRating: "Árak",
+        mlServices: "Szolgáltatások",
         mlPortfolio: "Referencia",
         mlContact: "Kapcsolat",
         mlWelcome: "Üdvözlünk, mi vagyunk a",
@@ -49,7 +49,7 @@ const langData = {
         mlDescProf2: "Főbb referenciáim OnlyD2, Sniper és Zombi szerverek. Bonyolult, komplex, optimalizált pluginok, A* útvonalkeresés, NPC rendszer.",
         mlDescProf3: "Munkánkat 24 órán belüli határidóvel teljesítjük. A gyors kézbesítés mellett a precíz videó gyártása sem hanyagolt.",
         mlReference: "Referencia",
-        mlRating2: "Árak",
+        mlServices2: "Szolgáltatások",
         mlAbout2: "Csapatunkról",
         mlContact2: "Kapcsolat",
         mlFullName: "Teljes név",
@@ -72,11 +72,10 @@ const langData = {
         mlCarddesc1: [
             "Havonta 20 videó",
             "24 órán belüli munka",
-            "25-45 másodperc",
-            "Közepes minőség",
-            "Premiere Pro"
+            "25-50 másodperc",
+            "Közepes minőség"
         ],
-        mlCardprice1: "4000 Ft / Perc",
+        mlCardprice1: "3500 Ft / Perc",
 
         mlCardservice2: "Haladó csomag",
         mlCarddesc2: [
@@ -84,30 +83,24 @@ const langData = {
             "24 órán belüli munka",
             "25-60 másodperc",
             "Közepes minőség",
-            "Premiere Pro"
         ],
-        mlCardprice2: "3500 Ft / Perc",
+        mlCardprice2: "4000 Ft / Perc",
 
         mlCardservice3: "Profi csomag",
         mlCarddesc3: [
             "Havonta 30+ videó",
             "24 órán belüli munka",
-            "25-180 másodperc",
-            "Magas minőség",,
-            "Premiere Pro + After Effects"
+            "25-60 másodperc",
+            "Magas minőség",
         ],
         mlCardprice3: "6000 Ft / Perc",
-
-        mlPricecaution1: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution2: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution3: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
     },
 
     EN: {
         mlHome: "Home",
         mlAbout: "About Our Team",
         mlAboutDesc: "For a long time, we have been engaged in the editing of short-format videos. During this period, we have mastered numerous techniques that ensure guaranteed expansion on social media. We have worked and are currently working with several clients throughout our career, and their references can be viewed in the References section.",
-        mlRating: "Rating",
+        mlServices: "Services",
         mlPortfolio: "Reference",
         mlContact: "Contact",
         mlWelcome: "Welcome, we are the",
@@ -124,7 +117,7 @@ const langData = {
         mlDescProf2: "My main references are OnlyD2, Sniper, and Zombi servers. Hard, complex, optimized plugins. A* pathfinding, NPC system.",
         mlDescProf3: "We complete our work within a 24-hour deadline. In addition to swift delivery, we also prioritize precise video production.",
         mlReference: "Reference",
-        mlRating2: "Rating",
+        mlServices2: "Services",
         mlAbout2: "About Our Team",
         mlContact2: "Contact",
         mlFullName: "Full Name",
@@ -141,40 +134,7 @@ const langData = {
         mlCarRamp: "Car Ramp",
         mlColorGrading: "Color Grading",
         mlAI: "AI",
-        mlSport: "Sport",
-
-        mlCardservice1: "Basic Package",
-        mlCarddesc1: [
-            "20 videos per month",
-            "Work within 24 hours",
-            "25-45 seconds",
-            "Medium quality",
-            "Premiere Pro"
-        ],
-        mlCardprice1: "$12 / Minute",
-
-        mlCardservice2: "Advanced Package",
-        mlCarddesc2: [
-            "30+ videos per month",
-            "Work within 24 hours",
-            "25-60 seconds",
-            "Medium quality",
-            "Premiere Pro"
-        ],
-        mlCardprice2: "$10 / Minute",
-
-        mlCardservice3: "Professional Package",
-        mlCarddesc3: [
-            "30+ videos per month",
-            "Work within 24 hours",
-            "25-180 seconds",
-            "High quality",
-            "Premiere Pro + After Effects"
-        ],
-        mlCardprice3: "$15 / Minute",
-        mlPricecaution1: "The price may vary depending on the quality you demand.",
-        mlPricecaution2: "The price may vary depending on the quality you demand.",
-        mlPricecaution3: "The price may vary depending on the quality you demand.",
+        mlSport: "Sport"
     }
     
     
@@ -196,47 +156,25 @@ function initializeTyped(stringsArray) {
     });
 }
 
-function setLanguage(language) {
+function setLanguage(language){
     console.log(language);
     const languageData = langData[language];
 
     // Initialize the Typed.js instance with the new strings
     initializeTyped([languageData["mlProf3"], languageData["mlProf1"], languageData["mlProf2"]]);
 
-    // Update text content for elements based on IDs
     for (const key in languageData) {
         if (languageData.hasOwnProperty(key)) {
             const value = languageData[key];
-            // Update the content of the element if it exists
-            if (document.getElementById(key)) {
+            //console.log(`Language: ${language}, Key: ${key}, Value: ${value}`);
+
+            if(document.getElementById(key)){
                 document.getElementById(key).textContent = value;
             }
+            // You can perform further operations with the language, key, and value here
         }
     }
-
-    // Leírások és azonosítók tömbje
-    const descriptions = [
-        { desc: languageData.mlCarddesc1, listId: 'mlCarddesc1' },
-        { desc: languageData.mlCarddesc2, listId: 'mlCarddesc2' },
-        { desc: languageData.mlCarddesc3, listId: 'mlCarddesc3' }
-    ];
-
-    // Iterálás a leírások tömbjén
-    descriptions.forEach(({ desc, listId }) => {
-        const descriptionList = document.getElementById(listId);
-
-        // A meglévő elemek törlése a listából, ha szükséges
-        descriptionList.innerHTML = '';
-
-        // A listaelemek hozzáadása a megfelelő HTML elemhez
-        desc.forEach(item => {
-            const li = document.createElement('li');
-            li.textContent = item;
-            descriptionList.appendChild(li);
-        });
-    });
 }
-
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle("bx-x");
@@ -278,7 +216,7 @@ ScrollReveal({
 })
 
 ScrollReveal().reveal(".home-content, .heading", {origin: "top"});
-ScrollReveal().reveal(".home-img, .Rating-container, .portfolio-box, .contact form", {origin: "bottom"});
+ScrollReveal().reveal(".home-img, .services-container, .portfolio-box, .contact form", {origin: "bottom"});
 ScrollReveal().reveal(".home-content h1, .about-img", {origin: "left"});
 ScrollReveal().reveal(".home-content p, .about-content", {origin: "right"});
 
@@ -306,11 +244,6 @@ const videoData = {
         desc: 'After Effects + Premiere Pro',
         width: 250,
     },
-    colorgrading: {
-        src: 'patrick b cc.mp4',
-        desc: 'After Effects',
-        width: 250,
-    },
     gameplay: {
         src: '10.04.2023.afk.fix.mp4',
         desc: 'Premiere Pro',
@@ -328,6 +261,11 @@ const videoData = {
     },
     carramp: {
         src: 'carramp.mp4',
+        desc: 'After Effects',
+        width: 250,
+    },
+    colorgrading: {
+        src: 'patrick b cc.mp4',
         desc: 'After Effects',
         width: 250,
     },
@@ -359,88 +297,4 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
         videoElement.play();
     });
-});
-
-const videoKeys = Object.keys(videoData);
-let currentIndex = 0;
-
-const mainVideo = document.querySelector('.main-video video');
-const prevVideo = document.querySelector('.prev-video video');
-const nextVideo = document.querySelector('.next-video video');
-const videoDescription = document.getElementById('videoDescription');
-
-function updateVideos() {
-    const currentVideo = videoData[videoKeys[currentIndex]];
-    const prevIndex = (currentIndex - 1 + videoKeys.length) % videoKeys.length;
-    const nextIndex = (currentIndex + 1) % videoKeys.length;
-
-    const prevVideoData = videoData[videoKeys[prevIndex]];
-    const nextVideoData = videoData[videoKeys[nextIndex]];
-
-    mainVideo.src = currentVideo.src;
-    mainVideo.setAttribute('width', currentVideo.width); // Itt állítjuk be a fő videó szélességét.
-    videoDescription.textContent = currentVideo.desc;
-
-    prevVideo.src = prevVideoData.src;
-    /*prevVideo.setAttribute('width', 150); // Kisebb méretű előző videó
-    prevVideo.style.filter = 'blur(4px)';
-    prevVideo.style.opacity = '0.6';*/
-
-    nextVideo.src = nextVideoData.src;
-    /*nextVideo.setAttribute('width', 150); // Kisebb méretű következő videó
-    nextVideo.style.filter = 'blur(4px)';
-    nextVideo.style.opacity = '0.6';*/
-
-    // Kiemelés frissítése
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        if (btn.getAttribute('data-category') === videoKeys[currentIndex]) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + videoKeys.length) % videoKeys.length;
-    updateVideos();
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % videoKeys.length;
-    updateVideos();
-});
-
-document.querySelectorAll('.filter-btn').forEach((button) => {
-    button.addEventListener('click', () => {
-        currentIndex = videoKeys.indexOf(button.getAttribute('data-category'));
-        updateVideos();
-    });
-});
-
-updateVideos(); // Inicializálás
-
-document.querySelectorAll('.card').forEach(card => {
-    const cardInner = card.querySelector('.card-content');
-
-    card.addEventListener('mousemove', (event) => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenterX = cardRect.left + cardRect.width / 2;
-        const cardCenterY = cardRect.top + cardRect.height / 2;
-        const mouseX = event.clientX;
-        const mouseY = event.clientY;
-
-        const rotateX = ((mouseY - cardCenterY) / cardRect.height) * -10;
-        const rotateY = ((mouseX - cardCenterX) / cardRect.width) * 10;
-
-        cardInner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        cardInner.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM teljesen betöltve");
 });
