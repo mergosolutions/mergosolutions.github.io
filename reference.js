@@ -59,7 +59,7 @@ const langData = {
         mlDevinJatho: "Devin Jatho",
         mlMotivational: "Motiváció",
         mlPodcast: "Podcast",
-        mlVoiceover: "Arcleírás",
+        mlVoiceover: "Hangfelvétel",
         mlGameplay: "Játék",
         mlFunny: "Vicces",
         mlStoryTelling: "Történetmesélés",
@@ -100,7 +100,7 @@ const langData = {
         mlDevinJatho: "Devin Jatho",
         mlMotivational: "Motivational",
         mlPodcast: "Podcast",
-        mlVoiceover: "Facial voiceover",
+        mlVoiceover: "Voiceover",
         mlGameplay: "Gameplay",
         mlFunny: "Funny",
         mlStoryTelling: "Storytelling",
@@ -213,8 +213,8 @@ const videoData = {
         width: 250,
     },
     voiceover: {
-        src: 'jayoma voiceover.mp4',
-        desc: 'Premiere Pro',
+        src: 'Universe.mp4',
+        desc: 'After Effects + Premiere Pro',
         width: 250,
     },
     gameplay: {
