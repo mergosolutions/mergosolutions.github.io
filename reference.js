@@ -441,6 +441,21 @@ document.querySelectorAll('.card').forEach(card => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM teljesen betöltve");
+document.addEventListener('DOMContentLoaded', function() {
+    // Iterate over the videoData object
+    for (const key in videoData) {
+        if (videoData.hasOwnProperty(key)) {
+            const video = videoData[key];
+            
+            // Create a new video element for preloading
+            const preloadVideo = document.createElement('video');
+            preloadVideo.src = video.src;
+            preloadVideo.preload = 'auto'; // Set preload to 'auto'
+            
+            // Optional: Add an event listener to confirm preload
+            preloadVideo.addEventListener('loadeddata', () => {
+                console.log(`Preloaded video: ${preloadVideo.src}`);
+            });
+        }
+    }
 });
