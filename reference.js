@@ -90,14 +90,14 @@ const langData = {
         mlCarddesc3: [
             "Havonta 30+ videó",
             "24 órán belüli munka",
-            "Magas minőség",,
+            "Magas minőség",
             "Premiere Pro + After Effects"
         ],
         mlCardprice3: "6000 Ft / Videó",
 
-        mlPricecaution1: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution2: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
-        mlPricecaution3: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
+        mlPricecaution1: "Az ár változhat a minőségre / mennyiségre vonatkozó igényeinek függvényében.",
+        mlPricecaution2: "Az ár változhat a minőségre / mennyiségre vonatkozó igényeinek függvényében.",
+        mlPricecaution3: "Az ár változhat a minőségre / mennyiségre vonatkozó igényeinek függvényében.",
     },
 
     EN: {
@@ -166,9 +166,9 @@ const langData = {
             "Premiere Pro + After Effects"
         ],
         mlCardprice3: "$15 / Video",
-        mlPricecaution1: "The price may vary depending on the quality you demand.",
-        mlPricecaution2: "The price may vary depending on the quality you demand.",
-        mlPricecaution3: "The price may vary depending on the quality you demand.",
+        mlPricecaution1: "The price may vary depending on the quality / quantity you demand.",
+        mlPricecaution2: "The price may vary depending on the quality / quantity you demand.",
+        mlPricecaution3: "The price may vary depending on the quality / quantity you demand.",
     }
     
     
@@ -436,16 +436,24 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+    // A hidden container for preloading videos
+    const preloadContainer = document.createElement('div');
+    preloadContainer.style.display = 'none'; // Hide the container
+    document.body.appendChild(preloadContainer); // Append to body
+
     // Iterate over the videoData object
     for (const key in videoData) {
         if (videoData.hasOwnProperty(key)) {
             const video = videoData[key];
-            
+
             // Create a new video element for preloading
             const preloadVideo = document.createElement('video');
             preloadVideo.src = video.src;
             preloadVideo.preload = 'auto'; // Set preload to 'auto'
-            
+
+            // Append the video element to the hidden container
+            preloadContainer.appendChild(preloadVideo);
+
             // Optional: Add an event listener to confirm preload
             preloadVideo.addEventListener('loadeddata', () => {
                 console.log(`Preloaded video: ${preloadVideo.src}`);
