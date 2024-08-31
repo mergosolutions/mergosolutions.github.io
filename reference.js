@@ -75,7 +75,7 @@ const langData = {
             "Közepes minőség",
             "Premiere Pro"
         ],
-        mlCardprice1: "4000 Ft / Perc",
+        mlCardprice1: "4000 Ft / Videó",
 
         mlCardservice2: "Haladó csomag",
         mlCarddesc2: [
@@ -84,7 +84,7 @@ const langData = {
             "Közepes minőség",
             "Premiere Pro"
         ],
-        mlCardprice2: "3500 Ft / Perc",
+        mlCardprice2: "3500 Ft / Videó",
 
         mlCardservice3: "Profi csomag",
         mlCarddesc3: [
@@ -93,7 +93,7 @@ const langData = {
             "Magas minőség",,
             "Premiere Pro + After Effects"
         ],
-        mlCardprice3: "6000 Ft / Perc",
+        mlCardprice3: "6000 Ft / Videó",
 
         mlPricecaution1: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
         mlPricecaution2: "Az ár változhat a minőségre vonatkozó igényeinek függvényében.",
@@ -147,7 +147,7 @@ const langData = {
             "Medium quality",
             "Premiere Pro"
         ],
-        mlCardprice1: "$12 / Minute",
+        mlCardprice1: "$12 / Video",
 
         mlCardservice2: "Advanced Package",
         mlCarddesc2: [
@@ -156,7 +156,7 @@ const langData = {
             "Medium quality",
             "Premiere Pro"
         ],
-        mlCardprice2: "$10 / Minute",
+        mlCardprice2: "$10 / Video",
 
         mlCardservice3: "Professional Package",
         mlCarddesc3: [
@@ -165,7 +165,7 @@ const langData = {
             "High quality",
             "Premiere Pro + After Effects"
         ],
-        mlCardprice3: "$15 / Minute",
+        mlCardprice3: "$15 / Video",
         mlPricecaution1: "The price may vary depending on the quality you demand.",
         mlPricecaution2: "The price may vary depending on the quality you demand.",
         mlPricecaution3: "The price may vary depending on the quality you demand.",
