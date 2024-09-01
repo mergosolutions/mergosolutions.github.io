@@ -1,5 +1,4 @@
-// Supabase kliens inicializálása
-const { createClient } = supabase;
+const { createClient } = supabase
 
 const supabaseUrl = 'https://igfvhzoejwuhixcfwnso.supabase.co'; // A saját Supabase URL-ed
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlnZnZoem9land1aGl4Y2Z3bnNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjUxNjA4MjgsImV4cCI6MjA0MDczNjgyOH0.1ItDhHdXHSCJYOerJxTz46OHX6A6WuvbukSAPS2CzD8';               // A saját API kulcsod
