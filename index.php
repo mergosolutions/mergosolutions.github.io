@@ -151,7 +151,7 @@
 
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2025 by Heder | All Rights Reserved.</p>
+            <p>Copyright &copy; 2024 by Heder | All Rights Reserved.</p>
         </div>
 
         <div class="footer-iconTop">
@@ -166,6 +166,8 @@
     <script src="reference.js"></script>
 
     <script src="data.js"></script>
+
+    <?php include 'log_visit.php'; ?>  <!-- PHP fájl beillesztése -->
 
 </body>
 </html>
