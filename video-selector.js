@@ -10,7 +10,8 @@ const videoData = {
         width: 250,
     },
     podcast: {
-        src: '12.03.2023 Ghosts are dangerous.mp4',
+        src: '01.17.2024 k-osz.mp4',
+        //src: '12.03.2023 Ghosts are dangerous.mp4',
         desc: 'Premiere Pro',
         width: 250,
     },
@@ -134,6 +135,10 @@ document.querySelectorAll('.filter-btn').forEach((button) => {
 updateVideos(); // Inicializálás
 
 document.addEventListener('DOMContentLoaded', function() {
+    ResetVideos();
+});
+
+function ResetVideos(){
     // A hidden container for preloading videos
     const preloadContainer = document.createElement('div');
     preloadContainer.style.display = 'none'; // Hide the container
@@ -158,4 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-});
+}
