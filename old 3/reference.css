@@ -160,7 +160,7 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     background: var(--main-bg-color);
 }
 
@@ -189,12 +189,12 @@ span{
 }
 
 .Rating h2{
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 }
 
 .Rating{
     flex: 1 1 30rem;
-    background: var(--main-bg-color);
+    background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
@@ -222,7 +222,7 @@ span{
 }
 
 .portfolio{
-    background: var(--main-bg-color);
+    background: var(--second-bg-color);
 }
 
 .portfolio h2{
@@ -231,6 +231,43 @@ span{
 
 .contact h2{
     margin-bottom: 3rem;
+}
+
+.contact form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contract form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input{
+    width: 49%;
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
 }
 
 .footer{
@@ -346,7 +383,7 @@ span{
 
     .about img {
         width: 70wv;
-        margin-top: 1rem;
+        margin-top: 4rem;
     }
 
     .Rating h2{
@@ -428,16 +465,6 @@ span{
     /*3d transform */
     position: relative; /* Az abszolút pozicionálás miatt szükséges */
     perspective: 1000px; /* Elmélyíti a 3D-s hatást */
-    z-index: 100; /* A card elemet nagyobb szinten kivíváthatjük */
-}
-
-.card-content {
-    padding: 30px;
-    padding-right: 8px;
-    text-align: center;
-    /* 3D transzformáció */
-    transition: transform 0.2s ease;
-    transform-style: preserve-3d;
 }
 
 .cards-container {
@@ -482,6 +509,20 @@ span{
 /*.card:hover .card-title {
     animation: glow 10.5s infinite;
 }*/
+
+.card:hover .card-content {
+    transform: rotateY(0deg); /* Visszaáll a normál állapotba a hover alatt */
+}
+
+
+.card-content {
+    padding: 30px;
+    padding-right: 8px;
+    text-align: center;
+    /* 3D transzformáció */
+    transition: transform 0.2s ease;
+    transform-style: preserve-3d;
+}
 
 .card-image {
     max-width: 30%;
@@ -602,12 +643,3 @@ span{
     z-index: -1; /* Mögé helyezi a tartalmaknak */
     pointer-events: none; /* Nem zavarja a felhasználói interakciókat */
 }
-
-.separator-gradient {
-    border: 0;
-    height: 4px;
-    background: linear-gradient(to right, var(--bg-color), var(--second-bg-color)); /* Gradient colors */
-    margin: 40px 0;
-    border-radius: 2px; /* Optional: round the edges */
-}
-  
