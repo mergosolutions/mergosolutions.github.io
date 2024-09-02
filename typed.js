@@ -71,7 +71,7 @@ const langData = {
         mlCardservice1: "Alap csomag",
         mlCarddesc1: [
             "Havonta 20 videó",
-            "24 órán belüli munka",
+            "8-24 órán belüli munka",
             "Közepes minőség",
             "Premiere Pro"
         ],
@@ -80,7 +80,7 @@ const langData = {
         mlCardservice2: "Haladó csomag",
         mlCarddesc2: [
             "Havonta 30+ videó",
-            "24 órán belüli munka",
+            "8-24 órán belüli munka",
             "Közepes minőség",
             "Premiere Pro"
         ],
@@ -89,7 +89,7 @@ const langData = {
         mlCardservice3: "Profi csomag",
         mlCarddesc3: [
             "Havonta 30+ videó",
-            "24 órán belüli munka",
+            "8-24 órán belüli munka",
             "Magas minőség",
             "Premiere Pro + After Effects"
         ],
@@ -143,7 +143,7 @@ const langData = {
         mlCardservice1: "Basic Package",
         mlCarddesc1: [
             "20 videos per month",
-            "Work within 24 hours",
+            "Delivery within 8-24 hours",
             "Medium quality",
             "Premiere Pro"
         ],
@@ -152,7 +152,7 @@ const langData = {
         mlCardservice2: "Advanced Package",
         mlCarddesc2: [
             "30+ videos per month",
-            "Work within 24 hours",
+            "Delivery within 8-24 hours",
             "Medium quality",
             "Premiere Pro"
         ],
@@ -161,7 +161,7 @@ const langData = {
         mlCardservice3: "Professional Package",
         mlCarddesc3: [
             "30+ videos per month",
-            "Work within 24 hours",
+            "Delivery within 12-24 hours",
             "High quality",
             "Premiere Pro + After Effects"
         ],
