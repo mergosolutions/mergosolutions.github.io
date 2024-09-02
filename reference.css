@@ -252,7 +252,7 @@ span{
     align-items: center;
     flex-wrap: wrap;
     padding: 2rem 9%;
-    background: var(--second-bg-color);
+    background: linear-gradient(to right, var(--bg-color), var(--second-bg-color)); /* Gradient colors */
     margin-top: 0; /* Győződj meg róla, hogy nincs margin a footer tetején */
 }
 
