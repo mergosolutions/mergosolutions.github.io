@@ -38,6 +38,6 @@ ScrollReveal({
 })
 
 ScrollReveal().reveal(".home-content, .heading", {origin: "top"});
-ScrollReveal().reveal(".home-img, .Rating-container, .portfolio-box, .contact form, .cards-container, .portfolio",  {origin: "bottom"});
+ScrollReveal().reveal(".home-img, .Rating-container, .portfolio-box, .contact form, .cards-container, .portfolio, .contact",  {origin: "bottom"});
 ScrollReveal().reveal(".home-content h1, .about-img", {origin: "left"});
 ScrollReveal().reveal(".home-content p, .about-content", {origin: "right"});
