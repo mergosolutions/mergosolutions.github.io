@@ -42,6 +42,9 @@ const langData = {
         mlProf1: "Rövid videók",
         mlProf2: "Hosszú videók",
         mlProf3: "Videóvágók",
+        mlProf4: "Premiere Pro",
+        mlProf5: "After Effects",
+        mlProf6: "Alacsony árak",
         mlTitleProf1: "Web Fejlesztés",
         mlTitleProf2: "CS 1.6 Fejlesztés",
         mlTitleProf3: "Videóvágás",
@@ -114,6 +117,9 @@ const langData = {
         mlProf1: "Short Videos",
         mlProf2: "Long Videos",
         mlProf3: "Video Editors",
+        mlProf4: "Premiere Pro",
+        mlProf5: "After Effects",
+        mlProf6: "Cheap prices",
         mlTitleProf1: "Web Development",
         mlTitleProf2: "CS 1.6 Development",
         mlTitleProf3: "Video Editing",
@@ -183,8 +189,8 @@ function initializeTyped(stringsArray) {
 
     typed = new Typed(".multiple-text", {
         strings: stringsArray,
-        typeSpeed: 100,
-        backSpeed: 100,
+        typeSpeed: 50,
+        backSpeed: 50,
         backDelay: 1000,
         loop: true
     });
@@ -195,7 +201,7 @@ function setLanguage(language) {
     const languageData = langData[language];
 
     // Initialize the Typed.js instance with the new strings
-    initializeTyped([languageData["mlProf3"], languageData["mlProf1"], languageData["mlProf2"]]);
+    initializeTyped([languageData["mlProf3"], languageData["mlProf1"], languageData["mlProf2"], languageData["mlProf4"], languageData["mlProf5"], languageData["mlProf6"]]);
 
     // Update text content for elements based on IDs
     for (const key in languageData) {
