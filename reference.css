@@ -27,9 +27,14 @@ body{
 }
 
 section{
-    min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
+
+/* általános margin-törlést a szakaszok között */
+section + section {
+    margin-top: 0;
+}
+
 
 .header{
     position: fixed;
@@ -76,6 +81,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .home-img img{
@@ -162,6 +168,7 @@ span{
     align-items: center;
     gap: 3rem;
     background: var(--main-bg-color);
+    min-height: 100vh;
 }
 
 .about-img img{
@@ -200,6 +207,7 @@ span{
     text-align: center;
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
+    min-height: 100vh;
 }
 
 .Rating-container .Rating-box:hover{
@@ -223,6 +231,7 @@ span{
 
 .portfolio{
     background: var(--main-bg-color);
+    min-height: 100vh;
 }
 
 .portfolio h2{
@@ -233,6 +242,10 @@ span{
     margin-bottom: 3rem;
 }
 
+.contact{
+    min-height: 100vh;
+}
+
 .footer{
     display: flex;
     justify-content: space-between;
@@ -240,6 +253,7 @@ span{
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--second-bg-color);
+    margin-top: 0; /* Győződj meg róla, hogy nincs margin a footer tetején */
 }
 
 .footer-text p{
