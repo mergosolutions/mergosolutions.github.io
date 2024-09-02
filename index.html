@@ -31,9 +31,10 @@
             <h3><span class="multiple-text">Frontend Developer!</span></h3>
             <div class="social-media">
                 <!--<a href="#facebook"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="#twitter"><i class='bx bxl-twitter'></i></a>-->
+                <a href="#twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.tiktok.com/@mergosolutions" target="_blank"><i class='bx bxl-tiktok'></i>-->
                 <a href="https://discordapp.com/users/1202298816922136657" target="_blank"><i class='bx bxl-discord-alt'></i></a>
-                <a href="https://www.tiktok.com/@mergosolutions" target="_blank"><i class='bx bxl-tiktok'></i>
+                <a href="https://www.instagram.com/mergosolutions/" target="_blank"><i class='bx bxl-instagram-alt'></i>
                 <a href="https://www.youtube.com/@MergoSolutions" target="_blank"><i class='bx bxl-youtube'></i>
             </div>
             <div><a href="#portfolio" class="btn">Reference</a></div>
@@ -153,6 +154,7 @@
         <div style="padding-left: 560px;"><a href="https://discordapp.com/users/1202298816922136657" target="_blank" class="btn">Discord</a></div>
         <div style="padding-top: 30px; padding-left: 560px;"><a href="https://www.instagram.com/mergosolutions/" target="_blank" class="btn">Instagram</a></div>
         <div style="padding-top: 30px; padding-left: 560px;"><a href="https://www.facebook.com/mergosolutions" target="_blank" class="btn">Facebook</a></div>
+        <div style="padding-top: 30px; padding-left: 560px;"><a target="_blank" class="btn"  onclick="copyEmail()">Email</a></div>
         <div style="padding-top: 30px; padding-left: 560px;"><a href="https://twitter.com/MergoSolutions" target="_blank" class="btn">X</a></div>
     </section>
 
@@ -181,6 +183,17 @@
     <script src="3d.js"></script>
 
     <script src="scrollreveal.js"></script>
+
+    <script>
+        function copyEmail() {
+            const email = "solutionsmergo@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                alert("Email address on Ctrl + V!");
+            }).catch(err => {
+                console.error("Error: ", err);
+            });
+        }
+    </script>
 
 </body>
 </html>
