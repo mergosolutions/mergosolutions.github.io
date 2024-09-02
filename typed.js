@@ -31,7 +31,7 @@ const langData = {
     HU: {
         mlHome: "Kezdőlap",
         mlAbout: "Csapatunkról",
-        mlAboutDesc: "Hosszú ideje rövid formátumú videók szerkesztésével foglalkozunk. Ez idő alatt számos technikát elsajátítottunk melyek segítségével garantáljuk a szocális médián való terjeszkedést. Több klienssel is dolgoztunk illetve dolgozunk pályafutásunk alatt, melyek referenciája megtekinthető a Referencia szekcióban.",
+        mlAboutDesc: "Hosszú ideje rövid formátumú videók szerkesztésével foglalkozunk. Ez idő alatt számos technikát elsajátítottunk, melyek segítségével garantáljuk a szociális médián való terjeszkedést. Több klienssel is dolgoztunk, illetve dolgozunk pályafutásunk alatt, melyek referenciái megtekinthetők a Referencia szekcióban.",
         mlRating: "Árak",
         mlPortfolio: "Referencia",
         mlContact: "Kapcsolat",
@@ -106,7 +106,7 @@ const langData = {
     EN: {
         mlHome: "Home",
         mlAbout: "About Our Team",
-        mlAboutDesc: "For a long time, we have been engaged in the editing of short-format videos. During this period, we have mastered numerous techniques that ensure guaranteed expansion on social media. We have worked and are currently working with several clients throughout our career, and their references can be viewed in the References section.",
+        mlAboutDesc: "For a long time, we have been engaged in editing short-format videos. During this period, we have mastered numerous techniques that ensure guaranteed expansion on social media. We have worked and are currently working with several clients throughout our career, and their references can be viewed in the References section.",
         mlRating: "Rating",
         mlPortfolio: "Reference",
         mlContact: "Contact",
